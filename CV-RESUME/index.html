@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Waizzuddin bin Bidin - CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="header">
+    <div class="profile-picture">
+        <img src="images/your-photo.jpg" alt="Your Photo">
+    </div>
+    <h1>Mohammad Waizzuddin bin Bidin</h1>
+    <p>Bachelors in Information Technology, UTP (Sept 2024-Present)</p>
+    <a href="mailto:mohammad_22011153@utp.edu.my" class="email">mohammad_22011153@utp.edu.my</a>
+</header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Aspiring IT professional pursuing a degree in Information Technology, with a strong passion for technology management and leadership. Highly motivated to develop expertise in IT infrastructure, cybersecurity, and project management. Seeking opportunities to enhance technical and strategic skills, with the goal of becoming an IT Manager in the future. Strong problem-solving abilities, teamwork skills, and a keen interest in optimizing IT systems to drive business success.</p>
+    </section>
+
+    <section class="technical-skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Programming Languages: Python, Java, C++, JavaScript, PHP</li>
+            <li>Web Development: HTML, CSS, JavaScript, React, Node.js</li>
+            <li>Database Management: SQL, MySQL, MongoDB</li>
+            <li>Operating Systems: Linux, Windows, macOS</li>
+            <li>Networking: TCP/IP, DNS, DHCP, Routing & Switching</li>
+            <li>Cloud Technologies: AWS, Azure</li>
+            <li>Cybersecurity: Network Security, Ethical Hacking, Penetration Testing</li>
+            <li>Software Development: Git, GitHub, Docker, Jenkins</li>
+            <li>Version Control: Git, GitHub</li>
+            <li>Software Development Life Cycle (SDLC)</li>
+            <li>Data Structures & Algorithms: Sorting Algorithms, Graph Theory, Trees, Recursion</li>
+            <li>Machine Learning: Supervised Learning, Neural Networks, TensorFlow</li>
+            <li>Business Intelligence: Power BI, Tableau</li>
+            <li>Computer Networks: Wi-Fi, LAN, VPNs, Firewall Configurations</li>
+            <li>IoT: Arduino, Raspberry Pi, Sensors</li>
+        </ul>
+    </section>
+
+    <section class="experience">
+        <h2>Activities & Involvement</h2>
+        <ul>
+            <li>Head of Department of Society Project UTP Harmoni</li>
+            <li>Assistant Head of Department of Academic Outreach UTP Stellar Astronomy Club</li>
+            <li>Head of Department of Academic Outreach UTP Stellar Astronomy Club</li>
+            <li>Treasurer I of UTP Stellar Astronomy Club</li>
+            <li>Committee Members of Community Development of Google Development Student Club (GDSC)</li>
+            <li>Supervisor of Lead Out Loud 2.0 2025</li>
+            <li>Secretary of Stars of Hope 2025</li>
+            <li>Facilitators of Look Up! Astronomy Camp 2025</li>
+            <li>Assistant Project Director II of EcoMarine Quest 2025</li>
+            <li>Assistant Project Director of Pathway to Mossy Heaven 2026</li>
+            <li>Treasurer of Misi Kasih Ramadhan 2025</li>
+            <li>Head of Department of Public Relation & Sponsorship of Together for Tomorrow (MPU4)</li>
+            <li>Head of Department of Logistics of Tide Turner 2025</li>
+            <li>Head of Department of Sponsorship of Brainiac Math 2025</li>
+            <li>Project Director of Little STEM Explorers 2025</li>
+            <li>Committee of Sponsorship of PETRONAS Raya Run 2025</li>
+            <li>Committee of Fnb of Down To Earth 2024</li>
+            <li>Committee of Media of Foundation Entrepreneurship Day (FEXES) 2025</li>
+            <li>Committee of Media of School Attack Programme 2025</li>
+            <li>Committee of Logistics of Young Scientist Camp 6 (YSC6) 2025</li>
+            <li>Committee of Logistics of Whisper of the Peak 2025</li>
+            <li>Committee of Media of Cosmic Voyage Astronomy Camp 2025</li>
+            <li>Volunteer for Free Market Seri Iskandar 4.0 2024</li>
+            <li>Volunteer of Zoo Negara 2025</li>
+            <li>Participant of Cosmic Strikes: InterStellar Throwdown 2025</li>
+            <li>Participant of Oh My Code! 2026</li>
+        </ul>
+    </section>
+
+    <button id="downloadBtn">Download CV as PDF</button>
+    <button id="viewModeBtn">View in Mobile Mode</button> <!-- Button to toggle between views -->
+
+    <footer>
+        <p>&copy; 2026 Mohammad Waizzuddin bin Bidin. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- jsPDF CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- html2canvas CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Capture the CV content (you can specify which part of the HTML to convert)
+            const cvContent = document.body;  // Alternatively, you can target a specific section like document.querySelector('.technical-skills')
+
+            // Add the content of the CV to the PDF
+            doc.html(cvContent, {
+                callback: function (doc) {
+                    // Save the generated PDF with a filename
+                    doc.save('My_CV.pdf');
+                },
+                x: 10,
+                y: 10,
+                width: 180,
+                windowWidth: 675
+            });
+        });
+    </script>
+</body>
+</html>
