@@ -387,3 +387,71 @@ body.mobile-view .toggle-media {
         transform: translateY(0);
     }
 }
+
+/* Image Zoom Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.25s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #dff7fa;
+}
+
+.media-grid img {
+    cursor: zoom-in;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.media-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.media-grid video {
+    height: 220px;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

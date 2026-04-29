@@ -267,13 +267,13 @@ activities.forEach((activity) => {
     }).join("");
 
     const videoItems = activity.videos.map((video) => {
-        return `
-            <video controls>
-                <source src="images/activities/${activity.folder}/${video}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        `;
-    }).join("");
+    return `
+        <video controls preload="metadata" class="activity-video">
+            <source src="images/activities/${activity.folder}/${video}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    `;
+}).join("");
 
     card.innerHTML = `
         <div class="activity-header">
@@ -315,4 +315,44 @@ document.querySelectorAll(".toggle-media").forEach((button) => {
             this.textContent = "Show Media";
         }
     });
+});
+
+// Image zoom modal
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.querySelector(".close-modal");
+
+document.addEventListener("click", function (event) {
+    if (event.target.matches(".media-grid img")) {
+        modalImage.src = event.target.src;
+        imageModal.classList.add("show");
+    }
+});
+
+closeModal.addEventListener("click", function () {
+    imageModal.classList.remove("show");
+    modalImage.src = "";
+});
+
+imageModal.addEventListener("click", function (event) {
+    if (event.target === imageModal) {
+        imageModal.classList.remove("show");
+        modalImage.src = "";
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        imageModal.classList.remove("show");
+        modalImage.src = "";
+    }
+});
+
+// Double click video to fullscreen
+document.addEventListener("dblclick", function (event) {
+    if (event.target.matches(".activity-video")) {
+        if (event.target.requestFullscreen) {
+            event.target.requestFullscreen();
+        }
+    }
 });
