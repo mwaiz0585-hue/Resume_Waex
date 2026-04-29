@@ -259,6 +259,7 @@ activities.forEach((activity) => {
     const imageItems = activity.images.map((image) => {
         return `
             <img 
+                class="zoomable-image"
                 src="images/activities/${activity.folder}/${image}" 
                 alt="${activity.title} media"
                 onerror="this.style.display='none';"
@@ -267,13 +268,13 @@ activities.forEach((activity) => {
     }).join("");
 
     const videoItems = activity.videos.map((video) => {
-    return `
-        <video controls preload="metadata" class="activity-video">
-            <source src="images/activities/${activity.folder}/${video}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    `;
-}).join("");
+        return `
+            <video controls preload="metadata" class="activity-video">
+                <source src="images/activities/${activity.folder}/${video}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        `;
+    }).join("");
 
     card.innerHTML = `
         <div class="activity-header">
@@ -320,31 +321,37 @@ document.querySelectorAll(".toggle-media").forEach((button) => {
 // Image zoom modal
 const imageModal = document.getElementById("imageModal");
 const modalImage = document.getElementById("modalImage");
-const closeModal = document.querySelector(".close-modal");
+const closeModal = document.getElementById("closeModal");
+
+function openImageModal(imageSrc) {
+    modalImage.src = imageSrc;
+    imageModal.classList.add("show");
+}
+
+function closeImageModal() {
+    imageModal.classList.remove("show");
+    modalImage.src = "";
+}
 
 document.addEventListener("click", function (event) {
-    if (event.target.matches(".media-grid img")) {
-        modalImage.src = event.target.src;
-        imageModal.classList.add("show");
+    const clickedImage = event.target.closest(".zoomable-image");
+
+    if (clickedImage) {
+        openImageModal(clickedImage.src);
     }
 });
 
-closeModal.addEventListener("click", function () {
-    imageModal.classList.remove("show");
-    modalImage.src = "";
-});
+closeModal.addEventListener("click", closeImageModal);
 
 imageModal.addEventListener("click", function (event) {
     if (event.target === imageModal) {
-        imageModal.classList.remove("show");
-        modalImage.src = "";
+        closeImageModal();
     }
 });
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-        imageModal.classList.remove("show");
-        modalImage.src = "";
+        closeImageModal();
     }
 });
 
