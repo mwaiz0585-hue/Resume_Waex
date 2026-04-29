@@ -305,31 +305,76 @@ footer {
     color: #555;
 }
 
-/* Mobile View Button Mode */
+/* Compact View Button Mode */
 body.mobile-view {
-    max-width: 430px;
+    max-width: 100%;
+}
+
+body.mobile-view main {
+    padding: 0 12px;
 }
 
 body.mobile-view .header {
-    padding: 30px 20px;
+    padding: 28px 16px;
+}
+
+body.mobile-view .profile-picture img {
+    width: 130px;
+    height: 130px;
 }
 
 body.mobile-view .header h1 {
-    font-size: 26px;
+    font-size: 24px;
+}
+
+body.mobile-view .header p,
+body.mobile-view .header .email {
+    font-size: 15px;
 }
 
 body.mobile-view .about,
 body.mobile-view .technical-skills,
 body.mobile-view .experience {
-    padding: 22px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+body.mobile-view .about p,
+body.mobile-view .section-intro,
+body.mobile-view .activity-description {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+body.mobile-view .technical-skills li {
+    font-size: 14px;
+    padding: 11px 12px;
+}
+
+body.mobile-view .activity-card {
+    padding: 15px;
 }
 
 body.mobile-view .activity-header h3 {
-    font-size: 19px;
+    font-size: 17px;
+}
+
+body.mobile-view .activity-meta {
+    font-size: 14px;
 }
 
 body.mobile-view .toggle-media {
     width: 100%;
+}
+
+body.mobile-view .media-grid {
+    grid-template-columns: 1fr;
+}
+
+body.mobile-view .media-grid img,
+body.mobile-view .media-grid video {
+    height: auto;
+    max-height: 320px;
 }
 
 /* Responsive Design */

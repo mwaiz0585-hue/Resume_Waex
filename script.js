@@ -4,11 +4,11 @@ const viewModeBtn = document.getElementById("viewModeBtn");
 viewModeBtn.addEventListener("click", function () {
     document.body.classList.toggle("mobile-view");
 
-    if (document.body.classList.contains("mobile-view")) {
-        viewModeBtn.textContent = "View in Normal Mode";
-    } else {
-        viewModeBtn.textContent = "View in Mobile Mode";
-    }
+  if (document.body.classList.contains("mobile-view")) {
+    viewModeBtn.textContent = "View in Comfortable Mode";
+} else {
+    viewModeBtn.textContent = "View in Compact Mode";
+}
 });
 
 // Activities data
