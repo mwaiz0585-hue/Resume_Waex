@@ -73,7 +73,7 @@ const activities = [
         year: "2025",
         description: "Handled documentation, meeting records, and administrative support for the programme.",
         folder: "stars-of-hope",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         videos: []
     },
     {
@@ -82,7 +82,7 @@ const activities = [
         year: "2025",
         description: "Facilitated astronomy camp activities and guided participants throughout the programme.",
         folder: "look-up-astronomy-camp",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         videos: []
     },
     {
@@ -100,7 +100,7 @@ const activities = [
         year: "2026",
         description: "Assisted in managing logistics, coordination, and programme execution for the hiking event.",
         folder: "pathway-to-mossy-heaven",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
         videos: []
     },
     {
@@ -109,7 +109,7 @@ const activities = [
         year: "2025",
         description: "Managed budgeting, financial tracking, and payment documentation for the charity programme.",
         folder: "misi-kasih-ramadhan",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
         videos: []
     },
     {
@@ -127,7 +127,7 @@ const activities = [
         year: "2025",
         description: "Managed logistics planning, item preparation, and operational support for the programme.",
         folder: "tide-turner",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg"],
         videos: []
     },
     {
@@ -136,7 +136,7 @@ const activities = [
         year: "2025",
         description: "Led sponsorship planning and communication to support the event’s funding and resources.",
         folder: "brainiac-math",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg"],
         videos: []
     },
     {
@@ -145,7 +145,7 @@ const activities = [
         year: "2025",
         description: "Directed and coordinated the overall programme planning, committee work, and event execution.",
         folder: "little-stem-explorers",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
         videos: []
     },
     {
@@ -155,7 +155,7 @@ const activities = [
         description: "Supported sponsorship-related tasks and assisted in securing event support.",
         folder: "petronas-raya-run",
         images: ["1.jpg", "2.jpg"],
-        videos: []
+        videos: ["video1.mp4", "video2.mp4"]
     },
     {
         title: "Committee of F&B of Down To Earth 2024",
@@ -163,7 +163,7 @@ const activities = [
         year: "2024",
         description: "Assisted with food and beverage planning, preparation, and distribution during the event.",
         folder: "down-to-earth",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
         videos: []
     },
     {
@@ -172,7 +172,7 @@ const activities = [
         year: "2025",
         description: "Captured event moments, supported media coverage, and contributed to visual documentation.",
         folder: "fexes",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg"],
         videos: []
     },
     {
@@ -181,7 +181,7 @@ const activities = [
         year: "2025",
         description: "Handled event media coverage and supported content documentation throughout the programme.",
         folder: "school-attack",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         videos: []
     },
     {
@@ -190,8 +190,8 @@ const activities = [
         year: "2025",
         description: "Supported logistics preparation, item management, and programme operations.",
         folder: "ysc6",
-        images: ["1.jpg", "2.jpg"],
-        videos: []
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
+        videos: ["video1.mp4"]
     },
     {
         title: "Committee of Logistics of Whisper of the Peak 2025",
@@ -217,7 +217,7 @@ const activities = [
         year: "2024",
         description: "Volunteered in community service activities and assisted with programme operations.",
         folder: "free-market-seri-iskandar",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"],
         videos: []
     },
     {
@@ -226,7 +226,7 @@ const activities = [
         year: "2025",
         description: "Participated in volunteer activities and supported on-site programme tasks.",
         folder: "zoo-negara",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg"],
         videos: []
     },
     {
@@ -235,7 +235,7 @@ const activities = [
         year: "2025",
         description: "Participated in the programme and engaged in team-based activities.",
         folder: "cosmic-strikes",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg"],
         videos: []
     },
     {
@@ -244,7 +244,7 @@ const activities = [
         year: "2026",
         description: "Participated in a coding-related programme focused on teamwork, creativity, and problem-solving.",
         folder: "oh-my-code",
-        images: ["1.jpg", "2.jpg"],
+        images: ["1.jpg", "2.jpg", "3.jpg"],
         videos: []
     }
 ];
