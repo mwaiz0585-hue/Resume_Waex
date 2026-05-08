@@ -67,6 +67,17 @@ const activities = [
         images: ["1.jpg", "2.jpg"],
         videos: []
     },
+
+    {
+    title: "Supervisor for Stargazing Department",
+    role: "Supervisor",
+    year: "2025",
+    description: "Supervised stargazing-related activities, supported telescope handling, guided participants during observation sessions, and helped ensure a smooth astronomy experience.",
+    folder: "stargazing-supervisor",
+    images: ["1.jpg", "2.jpg"],
+    videos: []
+},
+
     {
         title: "Secretary of Stars of Hope 2025",
         role: "Secretary",
