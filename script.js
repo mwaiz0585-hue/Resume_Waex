@@ -305,10 +305,6 @@ activities.forEach((activity) => {
                 ${videoItems}
             </div>
 
-            <p class="no-media">
-                Add your media files inside: 
-                <strong>images/activities/${activity.folder}/</strong>
-            </p>
         </div>
     `;
 
