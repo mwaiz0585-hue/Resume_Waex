@@ -267,25 +267,49 @@ activities.forEach((activity) => {
     const card = document.createElement("div");
     card.className = "activity-card";
 
-    const imageItems = activity.images.map((image) => {
-        return `
+    const imageItems = activity.images.map((image, index) => {
+    const filePath = `images/activities/${activity.folder}/${image}`;
+
+    return `
+        <div class="media-item">
             <img 
                 class="zoomable-image"
-                src="images/activities/${activity.folder}/${image}" 
+                src="${filePath}" 
                 alt="${activity.title} media"
-                onerror="this.style.display='none';"
+                onerror="this.parentElement.style.display='none';"
             >
-        `;
-    }).join("");
 
-    const videoItems = activity.videos.map((video) => {
-        return `
+            <a 
+                class="download-media-btn" 
+                href="${filePath}" 
+                download="${activity.folder}-photo-${index + 1}"
+            >
+                Download Picture
+            </a>
+        </div>
+    `;
+}).join("");
+
+    const videoItems = activity.videos.map((video, index) => {
+    const filePath = `images/activities/${activity.folder}/${video}`;
+
+    return `
+        <div class="media-item">
             <video controls preload="metadata" class="activity-video">
-                <source src="images/activities/${activity.folder}/${video}" type="video/mp4">
+                <source src="${filePath}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        `;
-    }).join("");
+
+            <a 
+                class="download-media-btn" 
+                href="${filePath}" 
+                download="${activity.folder}-video-${index + 1}"
+            >
+                Download Video
+            </a>
+        </div>
+    `;
+}).join("");
 
     card.innerHTML = `
         <div class="activity-header">

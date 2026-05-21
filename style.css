@@ -503,3 +503,31 @@ body.mobile-view .media-grid video {
         opacity: 1;
     }
 }
+
+.media-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.media-item img,
+.media-item video {
+    width: 100%;
+}
+
+.download-media-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #1f2a44;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.download-media-btn:hover {
+    background-color: #2f426b;
+    transform: translateY(-2px);
+}
