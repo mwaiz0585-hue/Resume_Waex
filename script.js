@@ -267,7 +267,7 @@ activities.forEach((activity) => {
     const card = document.createElement("div");
     card.className = "activity-card";
 
-    const imageItems = activity.images.map((image, index) => {
+   const imageItems = activity.images.map((image, index) => {
     const filePath = `images/activities/${activity.folder}/${image}`;
 
     return `
@@ -282,15 +282,15 @@ activities.forEach((activity) => {
             <a 
                 class="download-media-btn" 
                 href="${filePath}" 
-                download="${activity.folder}-photo-${index + 1}"
+                download="${activity.folder}-photo-${index + 1}.${image.split('.').pop()}"
             >
-                Download Picture
+                Download Original Picture
             </a>
         </div>
     `;
 }).join("");
 
-    const videoItems = activity.videos.map((video, index) => {
+   const videoItems = activity.videos.map((video, index) => {
     const filePath = `images/activities/${activity.folder}/${video}`;
 
     return `
@@ -303,9 +303,9 @@ activities.forEach((activity) => {
             <a 
                 class="download-media-btn" 
                 href="${filePath}" 
-                download="${activity.folder}-video-${index + 1}"
+                download="${activity.folder}-video-${index + 1}.${video.split('.').pop()}"
             >
-                Download Video
+                Download Original Video
             </a>
         </div>
     `;
