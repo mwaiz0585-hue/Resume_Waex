@@ -8,28 +8,87 @@
 </head>
 <body>
 
-    <header class="header">
+    <nav class="navbar">
+    <div class="nav-logo">Waizzuddin Portfolio</div>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#activities">Activities</a>
+        <a href="#drone">Drone Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
         <div class="profile-picture">
             <img src="images/your-photo.jpg" alt="Profile Photo">
         </div>
 
         <h1>Mohammad Waizzuddin bin Bidin</h1>
-        <p>Bachelor in Information Technology, UTP (Sept 2024 - Present)</p>
-        <a href="mailto:mohammad_22011153@utp.edu.my" class="email">
-            mohammad_22011153@utp.edu.my
-        </a>
-    </header>
+
+        <p class="hero-title">
+            Information Technology Student | Web Developer | Event Leader | Drone Content Creator
+        </p>
+
+        <p class="hero-description">
+            Passionate about technology, web development, leadership, creative media, and building digital solutions that create real impact.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="hero-btn">View Projects</a>
+            <a href="#activities" class="hero-btn secondary">View Activities</a>
+            <a href="mailto:mohammad_22011153@utp.edu.my" class="hero-btn">Contact Me</a>
+        </div>
+    </div>
+</header>
 
     <main>
 
-        <section class="about">
+  <section class="about" id="about">
             <h2>About Me</h2>
             <p>
                 Aspiring IT professional pursuing a degree in Information Technology, with a strong passion for technology management and leadership. Highly motivated to develop expertise in IT infrastructure, cybersecurity, and project management. Seeking opportunities to enhance technical and strategic skills, with the goal of becoming an IT Manager in the future. Strong problem-solving abilities, teamwork skills, and a keen interest in optimising IT systems to drive business success.
             </p>
         </section>
 
-        <section class="technical-skills">
+        <section class="projects" id="projects">
+    <h2>Featured Projects</h2>
+
+    <p class="section-intro">
+        A showcase of selected projects involving web development, digital tools, and creative technology.
+    </p>
+
+    <div id="projectsContainer" class="project-grid"></div>
+</section>
+
+    <section class="drone-gallery" id="drone">
+    <h2>Drone & Creative Gallery</h2>
+
+    <p class="section-intro">
+        A collection of aerial shots, creative visuals, and media captured through drone photography and videography.
+    </p>
+
+    <div id="droneContainer" class="drone-grid"></div>
+</section>
+
+<section class="contact-section" id="contact">
+    <h2>Contact Me</h2>
+
+    <p>
+        Feel free to reach out for internship opportunities, collaborations, project discussions, or creative work.
+    </p>
+
+    <div class="contact-links">
+        <a href="mailto:mohammad_22011153@utp.edu.my">Email Me</a>
+        <a href="https://www.linkedin.com/in/mohammadwaizzuddin" target="_blank">LinkedIn</a>
+        <a href="https://github.com/mwaiz0585-hue" target="_blank">GitHub</a>
+    </div>
+</section>
+
+       <section class="technical-skills" id="skills">
             <h2>Technical Skills</h2>
 
             <ul>
@@ -51,7 +110,7 @@
             </ul>
         </section>
 
-        <section class="experience">
+        <section class="experience" id="activities">
             <h2>Activities & Involvement</h2>
 
             <p class="section-intro">

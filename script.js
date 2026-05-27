@@ -11,6 +11,143 @@ viewModeBtn.addEventListener("click", function () {
 }
 });
 
+// Featured Projects data
+const projects = [
+    {
+        title: "WAEX Tools Studio",
+        description: "A web-based tools platform that provides file utility features such as background remover, PDF tools, image-to-PDF conversion, and document-related services.",
+        image: "images/projects/waex-tools.jpg",
+        tech: ["HTML", "CSS", "JavaScript", "Flask"],
+        liveLink: "#",
+        githubLink: "#"
+    },
+    {
+        title: "UTP Stellar Website",
+        description: "A website created for UTP Stellar Astronomy Club to showcase club information, events, registration, and astronomy-related activities.",
+        image: "images/projects/utp-stellar.jpg",
+        tech: ["HTML", "CSS", "JavaScript"],
+        liveLink: "#",
+        githubLink: "#"
+    },
+    {
+        title: "Personal Portfolio Website",
+        description: "A personal portfolio website built to showcase technical skills, projects, leadership involvement, activity media, and creative works.",
+        image: "images/projects/portfolio.jpg",
+        tech: ["HTML", "CSS", "JavaScript", "Render"],
+        liveLink: "https://resume-waex.onrender.com",
+        githubLink: "https://github.com/mwaiz0585-hue/Resume_Waex"
+    },
+    {
+        title: "Chat System Project",
+        description: "A WhatsApp-inspired conversation system project created to practise real-time communication interface design and basic chat system development.",
+        image: "images/projects/chat-system.jpg",
+        tech: ["HTML", "CSS", "JavaScript"],
+        liveLink: "#",
+        githubLink: "#"
+    }
+];
+
+// Generate project cards
+const projectsContainer = document.getElementById("projectsContainer");
+
+if (projectsContainer) {
+    projects.forEach((project) => {
+        const projectCard = document.createElement("div");
+        projectCard.className = "project-card";
+
+        const techTags = project.tech.map((item) => {
+            return `<span>${item}</span>`;
+        }).join("");
+
+        projectCard.innerHTML = `
+            <img 
+                src="${project.image}" 
+                alt="${project.title}"
+                onerror="this.style.display='none';"
+            >
+
+            <div class="project-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+
+                <div class="tech-tags">
+                    ${techTags}
+                </div>
+
+                <div class="project-links">
+                    <a href="${project.liveLink}" target="_blank">View Project</a>
+                    <a href="${project.githubLink}" target="_blank">GitHub</a>
+                </div>
+            </div>
+        `;
+
+        projectsContainer.appendChild(projectCard);
+    });
+}
+
+// Drone Gallery data
+const droneWorks = [
+    {
+        title: "UTP Aerial View",
+        description: "Aerial drone shot capturing the campus landscape and architecture of Universiti Teknologi PETRONAS.",
+        type: "image",
+        file: "images/drone/utp-aerial-1.jpg"
+    },
+    {
+        title: "UTP Golden Hour",
+        description: "Drone shot of UTP during golden hour with a calm and cinematic atmosphere.",
+        type: "image",
+        file: "images/drone/utp-sunset.jpg"
+    },
+    {
+        title: "Campus Cinematic Clip",
+        description: "Short drone video capturing beautiful scenes around the campus area.",
+        type: "video",
+        file: "images/drone/utp-video-1.mp4"
+    }
+];
+
+// Generate drone gallery
+const droneContainer = document.getElementById("droneContainer");
+
+if (droneContainer) {
+    droneWorks.forEach((item) => {
+        const droneCard = document.createElement("div");
+        droneCard.className = "drone-card";
+
+        let mediaElement = "";
+
+        if (item.type === "video") {
+            mediaElement = `
+                <video controls preload="metadata">
+                    <source src="${item.file}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+        } else {
+            mediaElement = `
+                <img 
+                    class="zoomable-image"
+                    src="${item.file}" 
+                    alt="${item.title}"
+                    onerror="this.style.display='none';"
+                >
+            `;
+        }
+
+        droneCard.innerHTML = `
+            ${mediaElement}
+
+            <div class="drone-content">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+            </div>
+        `;
+
+        droneContainer.appendChild(droneCard);
+    });
+}
+
 // Activities data
 const activities = [
     {
