@@ -531,3 +531,134 @@ document.addEventListener("dblclick", function (event) {
         }
     }
 });
+
+// =========================
+// MODERN PORTFOLIO ANIMATIONS
+// =========================
+
+// Scroll progress bar
+const progressBar = document.createElement("div");
+progressBar.className = "scroll-progress";
+document.body.appendChild(progressBar);
+
+window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + "%";
+});
+
+// Add reveal animation to sections and cards
+function applyRevealAnimation() {
+    const revealItems = document.querySelectorAll(
+        ".about, .technical-skills, .experience, .projects, .drone-gallery, .contact-section, .activity-card, .project-card, .drone-card"
+    );
+
+    revealItems.forEach((item) => {
+        item.classList.add("reveal");
+    });
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+}
+
+// Run after cards are generated
+setTimeout(applyRevealAnimation, 300);
+
+// Active navbar link while scrolling
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", function () {
+    let currentSection = "";
+
+    document.querySelectorAll("section[id]").forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+
+        if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("active-link");
+
+        if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active-link");
+        }
+    });
+});
+
+// Cursor glow effect for desktop
+const cursorGlow = document.createElement("div");
+cursorGlow.className = "cursor-glow";
+document.body.appendChild(cursorGlow);
+
+document.addEventListener("mousemove", function (event) {
+    cursorGlow.style.left = event.clientX + "px";
+    cursorGlow.style.top = event.clientY + "px";
+    cursorGlow.style.opacity = "1";
+});
+
+document.addEventListener("mouseleave", function () {
+    cursorGlow.style.opacity = "0";
+});
+
+// Card tilt effect
+document.addEventListener("mousemove", function (event) {
+    const cards = document.querySelectorAll(".activity-card, .project-card, .drone-card");
+
+    cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenterX = rect.left + rect.width / 2;
+        const cardCenterY = rect.top + rect.height / 2;
+
+        const distanceX = event.clientX - cardCenterX;
+        const distanceY = event.clientY - cardCenterY;
+
+        if (
+            event.clientX > rect.left &&
+            event.clientX < rect.right &&
+            event.clientY > rect.top &&
+            event.clientY < rect.bottom
+        ) {
+            const rotateX = -(distanceY / 25);
+            const rotateY = distanceX / 25;
+
+            card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        } else {
+            card.style.transform = "";
+        }
+    });
+});
+
+// Typewriter effect for hero title
+const heroTitle = document.querySelector(".hero-title");
+
+if (heroTitle) {
+    const originalText = heroTitle.textContent;
+    heroTitle.textContent = "";
+
+    let index = 0;
+
+    function typeHeroText() {
+        if (index < originalText.length) {
+            heroTitle.textContent += originalText.charAt(index);
+            index++;
+            setTimeout(typeHeroText, 35);
+        }
+    }
+
+    setTimeout(typeHeroText, 600);
+}
