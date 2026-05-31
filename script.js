@@ -72,7 +72,7 @@ const projects = [
             "images/projects/stellar-finance/10.jpg"
         ],
         tech: ["Google Apps Script", "Google Sheets", "Automation", "Finance Tracking"],
-        liveLink: "#",
+        liveLink: "https://script.google.com/macros/s/AKfycbwIvcYXHZ1srEPHXaoaNIoEAwpb_9OLhwKEQ1bHBlof6jjH-CpmDeC5z-LnzHDno3swVg/exec",
         githubLink: ""
     },
     {
@@ -128,21 +128,32 @@ if (projectsContainer) {
             return `<span>${item}</span>`;
         }).join("");
 
-        const projectImages = project.images.map((image) => {
+        const projectImages = project.images.map((image, index) => {
+            const extraClass = index >= 3 ? "extra-project-image" : "";
+
             return `
                 <img 
-                    class="zoomable-image project-gallery-image"
+                    class="zoomable-image project-gallery-image ${extraClass}"
                     src="${image}" 
-                    alt="${project.title}"
+                    alt="${project.title} screenshot ${index + 1}"
                     onerror="this.style.display='none';"
                 >
             `;
         }).join("");
 
+        const liveLink = project.liveLink ? project.liveLink.trim() : "";
+        const githubLink = project.githubLink ? project.githubLink.trim() : "";
+
         projectCard.innerHTML = `
             <div class="project-gallery">
                 ${projectImages}
             </div>
+
+            ${project.images.length > 3 ? `
+                <button class="toggle-project-gallery">
+                    View All Screenshots (${project.images.length})
+                </button>
+            ` : ""}
 
             <div class="project-content">
                 <h3>${project.title}</h3>
@@ -153,8 +164,8 @@ if (projectsContainer) {
                 </div>
 
                 <div class="project-links">
-                    ${project.liveLink && project.liveLink !== "#" ? `<a href="${project.liveLink}" target="_blank">View Project</a>` : ""}
-                    ${project.githubLink ? `<a href="${project.githubLink}" target="_blank">GitHub</a>` : ""}
+                    ${liveLink && liveLink !== "#" ? `<a href="${liveLink}" target="_blank" rel="noopener noreferrer">View Project</a>` : ""}
+                    ${githubLink && githubLink !== "#" ? `<a href="${githubLink}" target="_blank" rel="noopener noreferrer">GitHub</a>` : ""}
                 </div>
             </div>
         `;
@@ -162,6 +173,21 @@ if (projectsContainer) {
         projectsContainer.appendChild(projectCard);
     });
 }
+
+// Toggle project screenshots
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("toggle-project-gallery")) {
+        const projectCard = event.target.closest(".project-card");
+        projectCard.classList.toggle("gallery-open");
+
+        if (projectCard.classList.contains("gallery-open")) {
+            event.target.textContent = "Hide Screenshots";
+        } else {
+            const imageCount = projectCard.querySelectorAll(".project-gallery-image").length;
+            event.target.textContent = `View All Screenshots (${imageCount})`;
+        }
+    }
+});
 
 // Drone Gallery data
 const droneWorks = [

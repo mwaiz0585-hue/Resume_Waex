@@ -1322,3 +1322,60 @@ main,
 .project-gallery::-webkit-scrollbar-track {
     background: #dff7fa;
 }
+
+/* Better Project Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 12px;
+    background: #eef8fa;
+    overflow: visible;
+}
+
+.project-gallery-image {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: zoom-in;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.extra-project-image {
+    display: none;
+}
+
+.project-card.gallery-open .extra-project-image {
+    display: block;
+}
+
+.project-card.gallery-open .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.toggle-project-gallery {
+    margin: 10px 14px 0;
+    padding: 9px 12px;
+    background-color: #1f2a44;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-project-gallery:hover {
+    background-color: #2f426b;
+}
+
+@media (max-width: 768px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-gallery-image {
+        height: auto;
+        max-height: 320px;
+    }
+}
