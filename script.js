@@ -768,3 +768,18 @@ if (heroTitle) {
 
     setTimeout(typeHeroText, 600);
 }
+
+// Toggle project screenshots
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("toggle-project-gallery")) {
+        const projectCard = event.target.closest(".project-card");
+        projectCard.classList.toggle("gallery-open");
+
+        if (projectCard.classList.contains("gallery-open")) {
+            event.target.textContent = "Hide Screenshots";
+        } else {
+            const imageCount = projectCard.querySelectorAll(".project-gallery-image").length;
+            event.target.textContent = `View All Screenshots (${imageCount})`;
+        }
+    }
+});
