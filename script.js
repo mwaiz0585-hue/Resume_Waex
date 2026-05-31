@@ -719,34 +719,6 @@ document.addEventListener("mouseleave", function () {
     cursorGlow.style.opacity = "0";
 });
 
-// Card tilt effect
-document.addEventListener("mousemove", function (event) {
-    const cards = document.querySelectorAll(".activity-card, .project-card, .drone-card");
-
-    cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenterX = rect.left + rect.width / 2;
-        const cardCenterY = rect.top + rect.height / 2;
-
-        const distanceX = event.clientX - cardCenterX;
-        const distanceY = event.clientY - cardCenterY;
-
-        if (
-            event.clientX > rect.left &&
-            event.clientX < rect.right &&
-            event.clientY > rect.top &&
-            event.clientY < rect.bottom
-        ) {
-            const rotateX = -(distanceY / 25);
-            const rotateY = distanceX / 25;
-
-            card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else {
-            card.style.transform = "";
-        }
-    });
-});
-
 // Typewriter effect for hero title
 const heroTitle = document.querySelector(".hero-title");
 
