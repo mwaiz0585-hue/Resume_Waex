@@ -1515,3 +1515,47 @@ main,
 .toggle-project-gallery:hover {
     transform: none !important;
 }
+
+/* Hero text visibility fix */
+.hero h1,
+.hero-title,
+.hero-description {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: white !important;
+    text-align: center !important;
+}
+
+.hero h1 {
+    font-size: 38px !important;
+    margin: 22px 0 10px !important;
+    font-weight: 800 !important;
+}
+
+.hero-title {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    margin-bottom: 14px !important;
+}
+
+.hero-description {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    max-width: 650px !important;
+    margin: 0 auto 25px !important;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px !important;
+    }
+
+    .hero-title {
+        font-size: 15px !important;
+    }
+
+    .hero-description {
+        font-size: 14px !important;
+    }
+}
