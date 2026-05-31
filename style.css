@@ -1559,3 +1559,91 @@ main,
         font-size: 14px !important;
     }
 }
+
+/* Resume-aligned portfolio sections */
+.technical-summary,
+.education-section,
+.leadership-section {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142, 214, 223, 0.35);
+    padding: 35px;
+    margin: 0 20px 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.technical-summary h2,
+.education-section h2,
+.leadership-section h2 {
+    font-size: 32px;
+    margin-top: 0;
+    color: #1f2a44;
+    position: relative;
+    display: inline-block;
+}
+
+.technical-summary h2::after,
+.education-section h2::after,
+.leadership-section h2::after {
+    content: "";
+    display: block;
+    width: 55%;
+    height: 4px;
+    margin-top: 8px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #0077b6, #8ed6df);
+}
+
+.technical-summary p,
+.education-card p,
+.leadership-card p,
+.leadership-card li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.skills-grid,
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.skill-card,
+.education-card,
+.leadership-card {
+    background: #f8feff;
+    border-left: 6px solid #8ed6df;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.skill-card h3,
+.education-card h3,
+.leadership-card h3 {
+    margin-top: 0;
+    color: #1f2a44;
+}
+
+.leadership-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+/* Make resume-aligned sections mobile friendly */
+@media (max-width: 768px) {
+    .technical-summary,
+    .education-section,
+    .leadership-section {
+        padding: 24px;
+        margin: 0 10px 20px;
+    }
+
+    .skills-grid,
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+}
