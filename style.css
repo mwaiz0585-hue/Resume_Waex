@@ -1450,3 +1450,26 @@ main,
 .project-card.gallery-open .project-gallery {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
 }
+
+/* Stable card hover fix */
+.activity-card,
+.project-card,
+.drone-card {
+    transform: none !important;
+}
+
+.activity-card:hover,
+.project-card:hover,
+.drone-card:hover {
+    transform: translateY(-2px) !important;
+}
+
+.project-links a,
+.toggle-project-gallery,
+.toggle-media,
+.download-media-btn,
+.hero-btn,
+.contact-links a {
+    position: relative;
+    z-index: 10;
+}
