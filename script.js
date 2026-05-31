@@ -53,7 +53,7 @@ const projects = [
             "images/projects/resume-waex/9.jpg"
         ],
         tech: ["HTML", "CSS", "JavaScript", "Render"],
-        liveLink: "https://resume-waex.onrender.com",
+        liveLink: "#",
         githubLink: "https://github.com/mwaiz0585-hue/Resume_Waex"
     },
     {
@@ -781,5 +781,23 @@ document.addEventListener("click", function (event) {
             const imageCount = projectCard.querySelectorAll(".project-gallery-image").length;
             event.target.textContent = `View All Screenshots (${imageCount})`;
         }
+    }
+});
+
+// Fix project screenshot toggle
+document.addEventListener("click", function (event) {
+    const button = event.target.closest(".toggle-project-gallery");
+
+    if (!button) return;
+
+    const projectCard = button.closest(".project-card");
+    const totalImages = projectCard.querySelectorAll(".project-gallery-image").length;
+
+    projectCard.classList.toggle("gallery-open");
+
+    if (projectCard.classList.contains("gallery-open")) {
+        button.textContent = "Hide Screenshots";
+    } else {
+        button.textContent = `View All Screenshots (${totalImages})`;
     }
 });

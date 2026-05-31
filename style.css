@@ -1437,3 +1437,16 @@ main,
         max-height: 320px !important;
     }
 }
+
+/* Final fix for project screenshot toggle */
+.extra-project-image {
+    display: none !important;
+}
+
+.project-card.gallery-open .extra-project-image {
+    display: block !important;
+}
+
+.project-card.gallery-open .project-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+}
