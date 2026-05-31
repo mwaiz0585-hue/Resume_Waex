@@ -1292,3 +1292,33 @@ main,
         max-height: 380px;
     }
 }
+
+.project-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 12px;
+    background: #eef8fa;
+}
+
+.project-gallery-image {
+    min-width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: zoom-in;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.project-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.project-gallery::-webkit-scrollbar-thumb {
+    background: #8ed6df;
+    border-radius: 20px;
+}
+
+.project-gallery::-webkit-scrollbar-track {
+    background: #dff7fa;
+}

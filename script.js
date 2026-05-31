@@ -14,36 +14,105 @@ viewModeBtn.addEventListener("click", function () {
 // Featured Projects data
 const projects = [
     {
-        title: "WAEX Tools Studio",
-        description: "A web-based tools platform that provides file utility features such as background remover, PDF tools, image-to-PDF conversion, and document-related services.",
-        image: "images/projects/waex-tools.jpg",
-        tech: ["HTML", "CSS", "JavaScript", "Flask"],
+        title: "Clinic AI Workflow",
+        description: "A clinic workflow project focused on improving digital processes using AI-related concepts and structured system flow.",
+        images: [
+            "images/projects/clinic-ai-workflow/1.jpg"
+        ],
+        tech: ["AI", "Workflow", "Web System"],
         liveLink: "#",
-        githubLink: "#"
+        githubLink: "https://github.com/mwaiz0585-hue/clinic-ai-workflow"
     },
     {
-        title: "UTP Stellar Website",
-        description: "A website created for UTP Stellar Astronomy Club to showcase club information, events, registration, and astronomy-related activities.",
-        image: "images/projects/utp-stellar.jpg",
-        tech: ["HTML", "CSS", "JavaScript"],
+        title: "IoT Flight System",
+        description: "An IoT-based flight monitoring system project involving sensors, data collection, dashboard display, and system monitoring concepts.",
+        images: [
+            "images/projects/iot-flight-system/1.jpg",
+            "images/projects/iot-flight-system/2.jpg",
+            "images/projects/iot-flight-system/3.jpg",
+            "images/projects/iot-flight-system/4.jpg",
+            "images/projects/iot-flight-system/5.jpg",
+            "images/projects/iot-flight-system/6.jpg"
+        ],
+        tech: ["IoT", "Sensors", "Dashboard", "System Monitoring"],
         liveLink: "#",
-        githubLink: "#"
+        githubLink: "https://github.com/mwaiz0585-hue/iot-flight-system"
     },
     {
-        title: "Personal Portfolio Website",
+        title: "Resume Portfolio Website",
         description: "A personal portfolio website built to showcase technical skills, projects, leadership involvement, activity media, and creative works.",
-        image: "images/projects/portfolio.jpg",
+        images: [
+            "images/projects/resume-waex/1.jpg",
+            "images/projects/resume-waex/2.jpg",
+            "images/projects/resume-waex/3.jpg",
+            "images/projects/resume-waex/4.jpg",
+            "images/projects/resume-waex/5.jpg",
+            "images/projects/resume-waex/6.jpg",
+            "images/projects/resume-waex/7.jpg",
+            "images/projects/resume-waex/8.jpg",
+            "images/projects/resume-waex/9.jpg"
+        ],
         tech: ["HTML", "CSS", "JavaScript", "Render"],
         liveLink: "https://resume-waex.onrender.com",
         githubLink: "https://github.com/mwaiz0585-hue/Resume_Waex"
     },
     {
-        title: "Chat System Project",
-        description: "A WhatsApp-inspired conversation system project created to practise real-time communication interface design and basic chat system development.",
-        image: "images/projects/chat-system.jpg",
-        tech: ["HTML", "CSS", "JavaScript"],
+        title: "UTP Stellar Finance Tracker",
+        description: "A finance tracking system developed for UTP Stellar Astronomy Club using Google Sheets and Google Apps Script. It supports transaction recording, budgeting, financial monitoring, and treasurer documentation.",
+        images: [
+            "images/projects/stellar-finance/1.jpg",
+            "images/projects/stellar-finance/2.jpg",
+            "images/projects/stellar-finance/3.jpg",
+            "images/projects/stellar-finance/4.jpg",
+            "images/projects/stellar-finance/5.jpg",
+            "images/projects/stellar-finance/6.jpg",
+            "images/projects/stellar-finance/7.jpg",
+            "images/projects/stellar-finance/8.jpg",
+            "images/projects/stellar-finance/9.jpg",
+            "images/projects/stellar-finance/10.jpg"
+        ],
+        tech: ["Google Apps Script", "Google Sheets", "Automation", "Finance Tracking"],
         liveLink: "#",
-        githubLink: "#"
+        githubLink: ""
+    },
+    {
+        title: "UTP Stellar Website",
+        description: "A website created for UTP Stellar Astronomy Club to showcase club information, recruitment, events, gallery, activities, and astronomy-related features.",
+        images: [
+            "images/projects/stellar-website/1.jpg",
+            "images/projects/stellar-website/2.jpg",
+            "images/projects/stellar-website/3.jpg",
+            "images/projects/stellar-website/4.jpg",
+            "images/projects/stellar-website/5.jpg",
+            "images/projects/stellar-website/6.jpg",
+            "images/projects/stellar-website/7.jpg",
+            "images/projects/stellar-website/8.jpg",
+            "images/projects/stellar-website/9.jpg",
+            "images/projects/stellar-website/10.jpg",
+            "images/projects/stellar-website/11.jpg",
+            "images/projects/stellar-website/12.jpg",
+            "images/projects/stellar-website/13.jpg",
+            "images/projects/stellar-website/14.jpg",
+            "images/projects/stellar-website/15.jpg",
+            "images/projects/stellar-website/16.jpg",
+            "images/projects/stellar-website/17.jpg"
+        ],
+        tech: ["HTML", "CSS", "JavaScript", "Web Design"],
+        liveLink: "#",
+        githubLink: "https://github.com/mwaiz0585-hue/stellar-website"
+    },
+    {
+        title: "WAEX Studio Tools",
+        description: "A web-based tools platform that provides file utility features such as background remover, PDF tools, image-to-PDF conversion, and document-related services.",
+        images: [
+            "images/projects/waex-studio-tools/1.jpg",
+            "images/projects/waex-studio-tools/2.jpg",
+            "images/projects/waex-studio-tools/3.jpg",
+            "images/projects/waex-studio-tools/4.jpg"
+        ],
+        tech: ["HTML", "CSS", "JavaScript", "Flask"],
+        liveLink: "#",
+        githubLink: "https://github.com/mwaiz0585-hue/waex-studio-tools"
     }
 ];
 
@@ -59,12 +128,21 @@ if (projectsContainer) {
             return `<span>${item}</span>`;
         }).join("");
 
+        const projectImages = project.images.map((image) => {
+            return `
+                <img 
+                    class="zoomable-image project-gallery-image"
+                    src="${image}" 
+                    alt="${project.title}"
+                    onerror="this.style.display='none';"
+                >
+            `;
+        }).join("");
+
         projectCard.innerHTML = `
-            <img 
-                src="${project.image}" 
-                alt="${project.title}"
-                onerror="this.style.display='none';"
-            >
+            <div class="project-gallery">
+                ${projectImages}
+            </div>
 
             <div class="project-content">
                 <h3>${project.title}</h3>
@@ -75,8 +153,8 @@ if (projectsContainer) {
                 </div>
 
                 <div class="project-links">
-                    <a href="${project.liveLink}" target="_blank">View Project</a>
-                    <a href="${project.githubLink}" target="_blank">GitHub</a>
+                    ${project.liveLink && project.liveLink !== "#" ? `<a href="${project.liveLink}" target="_blank">View Project</a>` : ""}
+                    ${project.githubLink ? `<a href="${project.githubLink}" target="_blank">GitHub</a>` : ""}
                 </div>
             </div>
         `;
