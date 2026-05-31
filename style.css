@@ -1562,3 +1562,45 @@ body::after {
     opacity: 1 !important;
     transform: none !important;
 }
+
+/* =========================
+   PROJECT SECTION STABLE MODE
+   Remove distracting effects only for projects
+   ========================= */
+
+.project-card {
+    transform: none !important;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.project-card:hover {
+    transform: none !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* Stop project images from moving/zooming */
+.project-card:hover img,
+.project-card:hover video,
+.project-gallery-image:hover {
+    transform: none !important;
+    filter: none !important;
+}
+
+/* Stop shiny/glow effect on project buttons only */
+.project-links a::before,
+.toggle-project-gallery::before {
+    display: none !important;
+}
+
+/* Keep project buttons stable */
+.project-links a,
+.toggle-project-gallery {
+    transform: none !important;
+    position: relative;
+    z-index: 10;
+}
+
+.project-links a:hover,
+.toggle-project-gallery:hover {
+    transform: none !important;
+}
