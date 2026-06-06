@@ -192,20 +192,20 @@ document.addEventListener("click", function (event) {
 // Drone Gallery data
 const droneWorks = [
     {
-        title: "UTP Aerial View",
+        title: "UTP View From Above",
         description: "Aerial drone shot capturing the campus landscape and architecture of Universiti Teknologi PETRONAS.",
         type: "image",
         file: "images/drone/utp-aerial-1.jpg"
     },
     {
-        title: "UTP Golden Hour",
-        description: "Drone shot of UTP during golden hour with a calm and cinematic atmosphere.",
+        title: "UTP Chancellor Hall",
+        description: "Drone shot of UTP Chancellor Hall from a unique angle.",
         type: "image",
         file: "images/drone/utp-sunset.jpg"
     },
     {
-        title: "Campus Cinematic Clip",
-        description: "Short drone video capturing beautiful scenes around the campus area.",
+        title: "Masjid An-Nur UTP",
+        description: "Short drone video capturing beautiful mosque around the campus area.",
         type: "video",
         file: "images/drone/utp-video-1.mp4"
     }
