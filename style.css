@@ -1647,3 +1647,101 @@ main,
         grid-template-columns: 1fr;
     }
 }
+
+/* Education and internship badges */
+.hero-affiliations {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+    max-width: 680px;
+    margin: 24px auto 28px;
+}
+
+.affiliation-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    min-height: 96px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(10, 37, 64, 0.12);
+    color: #1f2a44;
+    text-align: left;
+}
+
+.affiliation-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.affiliation-logo--utp {
+    width: 64px;
+    height: 72px;
+}
+
+.affiliation-logo--utp img {
+    display: block;
+    width: 64px;
+    height: 72px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.affiliation-logo--vantris {
+    width: 112px;
+    height: 72px;
+}
+
+.affiliation-logo--vantris img {
+    display: block;
+    width: 112px;
+    height: 47px;
+    object-fit: contain;
+}
+
+.affiliation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.affiliation-label {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #52647a;
+}
+
+.affiliation-name {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #1f2a44;
+}
+
+.affiliation-caption {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #52647a;
+}
+
+@media (max-width: 640px) {
+    .hero-affiliations {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 340px;
+        gap: 10px;
+        margin: 20px auto 24px;
+    }
+}
+
