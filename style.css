@@ -1745,3 +1745,46 @@ main,
     }
 }
 
+
+/* Portfolio developer headline */
+.hero .hero-title {
+    font-size: clamp(24px, 3.4vw, 34px) !important;
+    line-height: 1.2;
+    font-weight: 800 !important;
+    letter-spacing: -0.025em;
+    margin: 12px 0 10px !important;
+}
+.hero-focus {
+    color: #ffffff;
+    font-size: clamp(13px, 1.6vw, 16px);
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0 auto 18px;
+    max-width: 650px;
+    text-align: center;
+    text-wrap: balance;
+}
+.hero-focus span {
+    padding: 0 6px;
+    color: #bdeff5;
+}
+@media (max-width: 480px) {
+    .hero-focus {
+        max-width: 300px;
+    }
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo img {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ffffff;
+}
+
